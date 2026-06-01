@@ -72,9 +72,41 @@ input{
 
 <div id="resultado"></div>
 
+<!-- ZONA ADMIN -->
+<div style="
+  margin-top:250px;
+  border-top:1px solid #444;
+  padding-top:25px;
+">
+
+  <div style="
+    color:#888;
+    margin-bottom:15px;
+    font-size:14px;
+  ">
+    Administración
+  </div>
+
+  <button
+    onclick="generarBoletos()"
+    style="
+      background:#ff4fd8;
+      color:white;
+      padding:15px 30px;
+      font-size:18px;
+      border:none;
+      border-radius:10px;
+      cursor:pointer;
+    "
+  >
+    🎸 GENERAR BOLETOS
+  </button>
+
+</div>  
+
 <script>
 
-const BACKEND_URL = "https://script.google.com/macros/s/AKfycbzTafomdOmzq2yBjaxvCHmYU-Bq3bpbPmuwd89zgYtDdSW-m_6q43Z3Ry3Gt-_xA7mb/exec";
+const BACKEND_URL = "https://script.google.com/macros/s/AKfycbwsXMZAQbupoTbEPlo1sPwiZPH3b5nDxzfUVkNaqITdgxuO0AuDW28YNttCPG9q9dZsRQ/exec";
 const TOKEN = "GRFSTAFF2026";
 
 function validarCodigo(codigo){
@@ -126,6 +158,23 @@ function iniciarScanner(){
   });
 
 }
+
+function generarBoletos(){
+
+  const confirmar = confirm(
+    "¿Deseas generar los boletos pendientes?"
+  );
+
+  if(!confirmar){
+    return;
+  }
+
+  window.open(
+    "https://script.google.com/macros/s/AKfycbwsXMZAQbupoTbEPlo1sPwiZPH3b5nDxzfUVkNaqITdgxuO0AuDW28YNttCPG9q9dZsRQ/exec?admin=generar&token=GRFSTAFF2026",
+    "_blank"
+  );
+
+}  
 
 </script>
 
